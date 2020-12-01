@@ -1,5 +1,8 @@
 package com.study.jvm;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author wang
  * @create 2020-12-01-11:02
@@ -61,5 +64,13 @@ public class OperandStackTest {
         int i9 = 10;
         int i10 = i9++ + ++i9; // 10+12
         System.out.println(i10);
+
+        Map map = new HashMap();
+        map.put(1,"s");
+        map.put(2,"e");
+
+        map.forEach((k,v) -> {
+            System.out.println((int)k + (String)v);
+        });
     }
 }
