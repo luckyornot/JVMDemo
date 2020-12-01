@@ -8,17 +8,19 @@ package com.study.jvm;
  */
 public class StackStruTest {
 
-    public static void main(String[] args) throws InterruptedException {
+    static class Father{
+        public static int A = 1;
+        static{
+            A = 2;
+        }
+    }
 
-        //int i = 2 + 3;
-        int i = 2;
-        int j = 3;
-        int s = i + j;
+    static class Son extends Father{
+        public static int B = A;
+    }
 
-        //Thread.sleep(6000);
-        System.exit(0);
-
-        System.out.println("hello");
-
+    public static void main(String[] args) {
+        //加载Father类，其次加载Son类。
+        System.out.println(Son.B);//2
     }
 }
